@@ -15,7 +15,7 @@ function shortcode_mpwp($atts) {
   return get_field($args['setting'], 'option');
 }
 
-function initialise_copirite_shortcodes() {
+function initialise_mpwp_shortcodes() {
   add_shortcode('mpwp-setting', 'shortcode_mpwp');
 }
 
