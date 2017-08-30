@@ -12,13 +12,14 @@ function shortcode_social_url($atts) {
 
 //[social-icons]
 function shortcode_social_icons() {
-  $available_social_medias = ['facebook', 'twitter', 'instagram', 'pinterest'];
+  $available_social_medias = ['facebook', 'twitter', 'instagram', 'pinterest', 'youtube-play', 'envelope-o'];
 
   $html = "";
   $social_media_html = "";
 
   foreach($available_social_medias as $sm) {
     $sm_url = get_field($sm . '_url', 'option');
+    if($sm == 'envelope-o') $sm_url = "mailto:" . $sm_url;
     if($sm_url) {
       $social_media_html .= "<li><a href='$sm_url'><i class='fa fa-$sm'></i></a></li>";
     }

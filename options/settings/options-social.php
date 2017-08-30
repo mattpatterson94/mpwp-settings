@@ -79,6 +79,38 @@ function register_social_options() {
           'default_value' => '',
           'placeholder' => '',
         ),
+        array (
+          'key' => 'field_57e338021e699',
+          'label' => 'Youtube URL',
+          'name' => 'youtube-play_url',
+          'type' => 'url',
+          'instructions' => '',
+          'required' => 0,
+          'conditional_logic' => 0,
+          'wrapper' => array (
+            'width' => '',
+            'class' => '',
+            'id' => '',
+          ),
+          'default_value' => '',
+          'placeholder' => '',
+        ),
+        array (
+          'key' => 'field_57e338021e611',
+          'label' => 'Email',
+          'name' => 'envelope-o_url',
+          'type' => 'url',
+          'instructions' => '',
+          'required' => 0,
+          'conditional_logic' => 0,
+          'wrapper' => array (
+            'width' => '',
+            'class' => '',
+            'id' => '',
+          ),
+          'default_value' => '',
+          'placeholder' => '',
+        ),
       ),
       'location' => array (
         array (
