@@ -11,7 +11,7 @@ function shortcode_social_url($atts) {
 }
 
 //[social-icons class="social-icons"]
-function shortcode_social_icons() {
+function shortcode_social_icons($atts) {
   $args = shortcode_atts(array('class' => 'social-icons',), $atts);
   $available_social_medias = ['facebook', 'twitter', 'instagram', 'pinterest', 'youtube-play', 'envelope-o'];
 
