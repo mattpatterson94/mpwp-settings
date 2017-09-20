@@ -19,7 +19,7 @@ function shortcode_social_icons( $atts ) {
 			'class' => 'social-icons',
 		), $atts
 	);
-	$available_social_medias = [ 'facebook', 'twitter', 'instagram', 'pinterest', 'youtube-play', 'spotify', 'envelope-o' ];
+	$available_social_medias = [ 'facebook', 'twitter', 'instagram', 'pinterest', 'youtube-play', 'apple', 'spotify', 'envelope-o' ];
 
 	$html = '';
 	$social_media_html = '';
