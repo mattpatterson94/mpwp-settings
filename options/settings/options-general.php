@@ -98,7 +98,7 @@ function register_general_options() {
         ),
         array (
           'key' => 'field_57e4a414ca5d8',
-          'label' => 'Logo',
+          'label' => 'Logo (2x)',
           'name' => 'theme_logo_2x',
           'type' => 'image',
           'instructions' => '',
