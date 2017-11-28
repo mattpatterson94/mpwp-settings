@@ -21,6 +21,11 @@ function shortcode_logo_2x() {
   return $logo;
 }
 
+//[address]
+function shortcode_address() {
+  return get_field('address', 'option');
+}
+
 //[phone-number]
 function shortcode_phone_number() {
   return get_field('phone_number', 'option');
@@ -35,6 +40,7 @@ function initialise_general_shortcodes() {
   add_shortcode('logo', 'shortcode_logo');
   add_shortcode('logo_2x', 'shortcode_logo_2x');
   add_shortcode('phone-number', 'shortcode_phone_number');
+  add_shortcode('address', 'shortcode_address');
   add_shortcode('email-address', 'shortcode_email_address');
 }
 
