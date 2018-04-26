@@ -13,94 +13,46 @@
 	*  @return	n/a
 	*/
 	
-	var acf_settings_repeater = acf.field_group.field_object.extend({
-		
+	var RepeaterCollapsedFieldSetting = acf.FieldSetting.extend({
 		type: 'repeater',
-		
-		actions: {
-			'render_settings': 'render'
-		},
-		
+		name: 'collapsed',
 		events: {
-			'change .acf-field-setting-layout input':		'_change_layout',
-			'focus .acf-field-setting-collapsed select':	'_focus_collapsed'
+			'focus select': 'onFocus',
 		},
-		
-		focus: function(){
-			
-			this.$fields = this.$field.find('.acf-field-list:first');
-			
-		},
-		
-		render: function(){
-			
-			this.render_layout();
-			this.render_collapsed();
-			
-		},
-		
-		render_layout: function(){
+		onFocus: function( e, $el ){
 			
 			// vars
-			var layout = this.setting('layout input:checked').val();
-			
-			
-			// update data
-			this.$fields.attr('data-layout', layout);
-			
-		},
-		
-		render_collapsed: function(){
-			
-			// vars
-			var $select = this.setting('collapsed select');
-			
+			var $select = $el;
 			
 			// collapsed
 			var choices = [];
 			
-			
 			// keep 'null' choice
 			choices.push({
-				'label': $select.find('option[value=""]').text(),
-				'value': ''
+				label: $select.find('option[value=""]').text(),
+				value: ''
 			});
 			
+			// find sub fields
+			var $list = this.fieldObject.$el.find('.acf-field-list:first');
+			var fields = acf.getFieldObjects({
+				list: $list
+			});
 			
 			// loop
-			this.$fields.children('.acf-field-object').each(function(){
-				
-				// vars
-				var $field = $(this);
-				
-				
-				// append
+			fields.map(function( field ){
 				choices.push({
-					'label': $field.find('.field-label:first').val(),
-					'value': $field.attr('data-key')
+					label: field.prop('label'),
+					value: field.prop('key')
 				});
-				
-			});
-			
+			});			
 			
 			// render
-			acf.render_select( $select, choices );
-			
-		},
-		
-		_change_layout: function( e ){
-			
-			this.render_layout();
-			
-		},
-		
-		_focus_collapsed: function( e ){
-			
-			this.render_collapsed();
-			
+			acf.renderSelect( $select, choices );
 		}
-		
 	});
+	
+	acf.registerFieldSetting( RepeaterCollapsedFieldSetting );
 	
 	
 	/*
@@ -136,20 +88,12 @@
 				
 				// add sortable
 				this.$settings.sortable({
-					items					: '> .acf-field-setting-fc_layout',
-					handle					: '[data-name="acf-fc-reorder"]',
-					forceHelperSize			: true,
-					forcePlaceholderSize	: true,
-					scroll					: true,
-					start : function (event, ui) {
-						
-						acf.do_action('sortstart', ui.item, ui.placeholder);
-						
-		   			},
-		   			
-		   			stop : function (event, ui) {
-					
-						acf.do_action('sortstop', ui.item, ui.placeholder);
+					items: '> .acf-field-setting-fc_layout',
+					handle: '[data-name="acf-fc-reorder"]',
+					forceHelperSize: true,
+					forcePlaceholderSize: true,
+					scroll: true,
+		   			stop: function (event, ui) {
 						
 						// save flexible content (layout order has changed)
 						acf.field_group.save_field( $field );
@@ -346,10 +290,6 @@
 					$el2.find('.acf-field-object').remove();
 					
 					
-					// show add new message
-					$el2.find('.no-fields-message').show();
-					
-					
 					// reset layout meta values
 					$el2.find('.acf-fc-meta input').val('');
 					
@@ -503,8 +443,6 @@
 			
 		},
 		
-		select2: null
-			
 	});
 	
 	acf_settings_clone.select2 = acf.model.extend({
@@ -531,7 +469,7 @@
 		select2_ajax_data: function( data, args, params ){
 			
 			// bail early if not clone
-			if( args.ajax_action !== 'acf/fields/clone/query' ) return data;
+			if( args.ajaxAction !== 'acf/fields/clone/query' ) return data;
 			
 			
 			// find current fields
@@ -558,6 +496,7 @@
 				};
 				
 			});
+			
 			
 			
 			// append fields
