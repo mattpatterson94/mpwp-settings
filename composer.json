@@ -1,0 +1,22 @@
+{
+  "name": "mattpatterson94/mpwp-settings",
+  "description": "A basic settings plugin for Wordpress",
+  "homepage": "https://github.com/mattpatterson94/mpwp-settings",
+  "keywords": [
+    "wordpress"
+  ],
+  "authors": [
+    {
+      "name": "Matt Patterson",
+      "homepage": "https://mattdoesdev.com/"
+    }
+  ],
+  "support": {
+      "issues": "https://github.com/mattpatterson94/mpwp-settings/issues",
+      "source": "https://github.com/mattpatterson94/mpwp-settings"
+  },
+  "type": "wordpress-plugin",
+  "require": {
+    "composer/installers": "~1.0"
+   }
+}
