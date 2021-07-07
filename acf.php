@@ -18,4 +18,4 @@ function mpwp_acf_settings_dir( $dir ) {
 // add_filter('acf/settings/show_admin', '__return_false');
 
 // 4. Include ACF
-include_once( plugin_dir_path( __FILE__ ) . '/acf/acf.php' );
+include_once( plugin_dir_path( __FILE__ ) . '/vendor/advanced-custom-fields/advanced-custom-fields-pro/acf.php' );
