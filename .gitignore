@@ -1,3 +1,5 @@
 .DS_Store
 vendor
 advanced-custom-fields
+.env
+composer.lock
