@@ -2,6 +2,7 @@
   "name": "mattpatterson94/mpwp-settings",
   "description": "A basic settings plugin for Wordpress",
   "homepage": "https://github.com/mattpatterson94/mpwp-settings",
+  "license": "GPL-2.0+",
   "keywords": [
     "wordpress"
   ],
