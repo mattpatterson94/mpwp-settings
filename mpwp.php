@@ -3,10 +3,10 @@
 **************************************************************************
 
 Plugin Name:  MPWP Settings
-Description:  Adds Matt Patterson related settings and modules. DO NOT DELETE OR DISABLE
-Version:      0.0.9
+Description:  Sets up a bunch of generic fields via ACF that can be used 
+Version:      1.0.0
 Author:       Matt Patterson
-Author URI:   http://mattpatterson.xyz
+Author URI:   https://mattdoesdev.com
 Text Domain:  mpwp-settings
 
 **************************************************************************

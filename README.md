@@ -1,11 +1,12 @@
 ### MPWP SETTINGS WORDPRESS PLUGIN
 
 
-This plugin was created to add generic settings pages to wordpress sites made by [Matt Patterson](http://www.mattpatterson.xyz).
+This plugin was created to add generic settings pages to wordpress sites, to reduce repetition.
 
 
 #### How it works
-This plugin uses a local copy of [Advanced Custom Fields PRO](https://wordpress.org/plugins/advanced-custom-fields/) in order to create options pages for any wordpress site this plugin is activated on. This makes starting out new wordpress sites a lot easier, and you don't have to create any yucky standard wordpress options pages.
+
+This plugin installs [Advanced Custom Fields](https://wordpress.org/plugins/advanced-custom-fields/) when running composer install, in order to create options pages for any wordpress site this plugin is activated on. This makes starting out new wordpress sites a lot easier, and you don't have to create any standard wordpress options pages.
 
 #### Current Options
 These are the current option pages set up currently.
